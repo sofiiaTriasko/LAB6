@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.name }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <h1>{{ category.name }}</h1>
+    <ul>
+        {% for product in products %}
+        <li>{{ product.name }} - ${{ product.price }} ({{ product.quantity }} in stock)</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back to Categories</a>
+</body>
+</html>

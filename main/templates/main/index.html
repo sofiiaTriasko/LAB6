@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Store</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <h1>Product Categories</h1>
+    <ul>
+        {% for category in categories %}
+        <li><a href="{% url 'category_detail' category.id %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
